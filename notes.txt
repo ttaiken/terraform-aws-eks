@@ -1,0 +1,2 @@
+Error: configmaps "aws-auth" already exists
+kubectl delete ingress/ingress-2048 -n byron-ns

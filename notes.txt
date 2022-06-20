@@ -1,2 +1,41 @@
-Error: configmaps "aws-auth" already exists
-kubectl delete ingress/ingress-2048 -n byron-ns
+1. Install eksctl and Chocolatey		
+	https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html	
+	windows:	
+		
+	1.1  Install Chocolatey	
+		# Run with powershell
+		Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+		# check 
+		choco
+	1.2 install eksctl	
+		choco install -y eksctl 
+		
+	Linux	
+		curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+		sudo mv /tmp/eksctl /usr/local/bin
+		eksctl version
+2. install kubernetes 1.22			https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html	
+windows	mkdir c:\bin			
+	cd c:\bin			
+	curl -o kubectl.exe https://s3.us-west-2.amazonaws.com/amazon-eks/1.22.6/2022-03-09/bin/windows/amd64/kubectl.exe			
+Linux	curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.22.6/2022-03-09/bin/linux/amd64/kubectl			
+	chmod a+x kubectl			
+	sudo mv kubectl /usr/local/bin			
+3. AWS CLI				
+	Installing or updating the latest version of the AWS CLI - AWS Command Line Interface (amazon.com)			
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+4.Helm	https://docs.aws.amazon.com/eks/latest/userguide/helm.html
+5.Git	
+	https://git-scm.com/download/win
+6. aws ECR 作成
+7.Dcoker 	
+	https://www.docker.com/products/docker-desktop/
+	以前のバージョンの WSL の手動インストール手順 | Microsoft Docs
+8. Java_gradle_springboot
+8.1 JDK	AdoptOpenJDK - Open source, prebuilt OpenJDK binaries
+8.2 Gradle	https://gradle.org/install/
+9.Terraform		
+	https://www.terraform.io/downloads	
+		sudo yum install -y yum-utils
+		sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+		sudo yum -y install terraform
